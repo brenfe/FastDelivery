@@ -1,7 +1,6 @@
-# tiendita-2
+# FastDelivery
 
-A new Flutter project.
+Proyecto hecho con Flutter para la materia Informática Aplicada.
 
-## Getting Started
 
-FlutterFlow projects are built to run on the Flutter _stable_ release.
+
