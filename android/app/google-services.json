@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "640744924529",
+    "project_id": "tiendita-2-n990pe",
+    "storage_bucket": "tiendita-2-n990pe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640744924529:android:2010cf8faf6740ba4282d0",
+        "android_client_info": {
+          "package_name": "com.mycompany.tiendita"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrq-n32Oc6_HZMjpeYaBFRdugmQznOc2s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
