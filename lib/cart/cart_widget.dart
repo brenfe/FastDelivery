@@ -691,10 +691,11 @@ class _CartWidgetState extends State<CartWidget> {
                             name: currentUserDisplayName,
                             amount:
                                 functions.totalValue(cartCartRecord!.amount),
-                            status: 'En espera',
+                            status: 'en espera',
                             createdAt: getCurrentTimestamp,
                             creator: currentUserReference,
                             cart: cartCartRecord?.reference,
+                            hide: 'False',
                           ),
                           ...mapToFirestore(
                             {
@@ -708,10 +709,11 @@ class _CartWidgetState extends State<CartWidget> {
                             name: currentUserDisplayName,
                             amount:
                                 functions.totalValue(cartCartRecord!.amount),
-                            status: 'En espera',
+                            status: 'en espera',
                             createdAt: getCurrentTimestamp,
                             creator: currentUserReference,
                             cart: cartCartRecord?.reference,
+                            hide: 'False',
                           ),
                           ...mapToFirestore(
                             {

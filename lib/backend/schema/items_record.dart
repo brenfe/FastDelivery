@@ -56,6 +56,11 @@ class ItemsRecord extends FirestoreRecord {
   String get image => _image ?? '';
   bool hasImage() => _image != null;
 
+  // "hide" field.
+  String? _hide;
+  String get hide => _hide ?? '';
+  bool hasHide() => _hide != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _description = snapshotData['description'] as String?;
@@ -65,6 +70,7 @@ class ItemsRecord extends FirestoreRecord {
     _onSale = snapshotData['on_sale'] as bool?;
     _salePrice = castToType<double>(snapshotData['sale_price']);
     _image = snapshotData['image'] as String?;
+    _hide = snapshotData['hide'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -109,6 +115,7 @@ Map<String, dynamic> createItemsRecordData({
   bool? onSale,
   double? salePrice,
   String? image,
+  String? hide,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -120,6 +127,7 @@ Map<String, dynamic> createItemsRecordData({
       'on_sale': onSale,
       'sale_price': salePrice,
       'image': image,
+      'hide': hide,
     }.withoutNulls,
   );
 
@@ -138,7 +146,8 @@ class ItemsRecordDocumentEquality implements Equality<ItemsRecord> {
         e1?.modifiedAt == e2?.modifiedAt &&
         e1?.onSale == e2?.onSale &&
         e1?.salePrice == e2?.salePrice &&
-        e1?.image == e2?.image;
+        e1?.image == e2?.image &&
+        e1?.hide == e2?.hide;
   }
 
   @override
@@ -150,7 +159,8 @@ class ItemsRecordDocumentEquality implements Equality<ItemsRecord> {
         e?.modifiedAt,
         e?.onSale,
         e?.salePrice,
-        e?.image
+        e?.image,
+        e?.hide
       ]);
 
   @override

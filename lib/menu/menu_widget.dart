@@ -203,7 +203,12 @@ class _MenuWidgetState extends State<MenuWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: StreamBuilder<List<ItemsRecord>>(
-                      stream: queryItemsRecord(),
+                      stream: queryItemsRecord(
+                        queryBuilder: (itemsRecord) => itemsRecord.where(
+                          'hide',
+                          isEqualTo: 'False',
+                        ),
+                      ),
                       builder: (context, snapshot) {
                         // Customize what your widget looks like when it's loading.
                         if (!snapshot.hasData) {

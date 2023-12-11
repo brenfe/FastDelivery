@@ -52,8 +52,8 @@ class OrderRecord extends FirestoreRecord {
   bool hasSelectedItems() => _selectedItems != null;
 
   // "hide" field.
-  bool? _hide;
-  bool get hide => _hide ?? false;
+  String? _hide;
+  String get hide => _hide ?? '';
   bool hasHide() => _hide != null;
 
   void _initializeFields() {
@@ -64,7 +64,7 @@ class OrderRecord extends FirestoreRecord {
     _creator = snapshotData['creator'] as DocumentReference?;
     _cart = snapshotData['cart'] as DocumentReference?;
     _selectedItems = getDataList(snapshotData['selectedItems']);
-    _hide = snapshotData['hide'] as bool?;
+    _hide = snapshotData['hide'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -107,7 +107,7 @@ Map<String, dynamic> createOrderRecordData({
   DateTime? createdAt,
   DocumentReference? creator,
   DocumentReference? cart,
-  bool? hide,
+  String? hide,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
